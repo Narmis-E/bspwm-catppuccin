@@ -26,10 +26,10 @@ Config is WIP.
 ## dunst:
 Config is also WIP.
 
-## Colour config help:
+## Colour customisation tools:
 - [color-picker](https://github.com/Jack12816/colorpicker): copies pixel hex values to clipboard.
 - [xev](https://github.com/freedesktop/xev): useful for finding the name of certain keystrokes (i.e for sxhkd config)
-
+- [ImageGoNord](https://github.com/Schrodinger-Hat/ImageGoNord): a super cool tool which nordifies any image (good for nord rices)!
 
 
 ## Custom scripts:
