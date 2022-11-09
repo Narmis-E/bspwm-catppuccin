@@ -1,28 +1,26 @@
-# linux-config
+# Arch Linux BSPWM Riceing
 
-My linux configs for bspwm, sxhkd, polybar, rofi and dunst.
+My linux configs for bspwm, sxhkd, tint2, polybar, rofi and dunst.
 
-**bspwmrc:**
-- [picom](https://github.com/jonaburg/picom): compositor with animations
-- [nitrogen](https://github.com/l3ib/nitrogen): wallpaper manager
-- [tint2](https://github.com/o9000/tint2): small and lightweight application icon panel
-- [polybar](https://github.com/polybar/polybar): bar for displaying system information
+![](images/Rice1.png)
 
-**sxhkd:**
-- [xfce4-terminal](https://github.com/xfce-mirror/xfce4-terminal): my terminal of choice
-- [flameshot](https://github.com/flameshot-org/flameshot): screenshots
-- Thunar (will replace with nautilius)
+### Info:
+📥 = my configs
 
-**polybar:**
-- [Font Awesome](https://github.com/FortAwesome/Font-Awesome): polybar icons
-- [playerctl](https://github.com/altdesktop/playerctl): polybar media controller/display module
-- [zscroll](https://github.com/noctuid/zscroll): scrolling text feature to the network module (can add to playerctl module)
+[📥]()  [bspwmrc]()\
+[picom](https://github.com/jonaburg/picom) (Jonaburg fork)\
+[nitrogen](https://github.com/l3ib/nitrogen)\
+[📥]()  [tint2](https://github.com/o9000/tint2)\
+[📥]()  [polybar](https://github.com/polybar/polybar)
+[📥]()  [sxhkd]()\
+[xfce4-terminal](https://github.com/xfce-mirror/xfce4-terminal)\
+[flameshot](https://github.com/flameshot-org/flameshot)\
+[📥]()  [polybar]()\
+[Font Awesome](https://github.com/FortAwesome/Font-Awesome)\
+[📥]()  [playerctl](https://github.com/altdesktop/playerctl)\
+[📥]()  [zscroll](https://github.com/noctuid/zscroll)
 
-**rofi:**  
-Config is WIP.
-
-**dunst:**  
-Config is also WIP.
+rofi and dunst are WIP.
 
 **Colour customisation tools:**
 - [color-picker](https://github.com/Jack12816/colorpicker): pixel hex values to clipboard.
