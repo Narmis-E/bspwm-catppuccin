@@ -20,7 +20,7 @@ My linux configs for bspwm, sxhkd, tint2, polybar, rofi and dunst.
 
 rofi and dunst configs are WIP.
 
-**Colour customisation tools:**
-- [color-picker](https://github.com/Jack12816/colorpicker): pixel hex values to clipboard.
-- [xev](https://github.com/freedesktop/xev): useful for finding the name of certain keystrokes
-- [ImageGoNord](https://github.com/Schrodinger-Hat/ImageGoNord): nordifies any image (see some -nord versions in [wallpapers](https://github.com/Narmis-E/linux-config/tree/main/images/wallpapers) !
+### Colour customisation tools:
+[color-picker](https://github.com/Jack12816/colorpicker): pixel hex values to clipboard.\
+[xev](https://github.com/freedesktop/xev): useful for finding the name of certain keystrokes\
+[ImageGoNord](https://github.com/Schrodinger-Hat/ImageGoNord): nordifies any image (see some -nord versions in [wallpapers](https://github.com/Narmis-E/linux-config/tree/main/images/wallpapers) !
