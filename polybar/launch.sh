@@ -4,8 +4,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch bars
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar bar1 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar bar2 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar bar3 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar bar4 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar bar5 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
+polybar timespace 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar playerctl 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
