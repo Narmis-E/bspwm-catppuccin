@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ssid=`nmcli -t -f name connection show --active`
+#ssid=`nmcli -t -f name connection show --active`
 ipaddr=`ip a | grep "scope global" | grep -Po '(?<=inet )[\d.]+'`
-net="$ssid $ipaddr" 
-echo "$net" | zscroll -l 20
+#net="$ssid $ipaddr" 
+echo "$ipaddr" | zscroll -l 20
