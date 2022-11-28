@@ -150,4 +150,4 @@ configuration {
   }
 }
 //@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-@theme "/$HOME/.local/share/rofi/themes/squared-material-red.rasi"
+@theme "/home/narmis/.dotfiles/rofi/themes/squared-material-red.rasi"
