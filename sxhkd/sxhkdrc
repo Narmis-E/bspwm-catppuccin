@@ -19,11 +19,11 @@ super + c
 
 # rofi-wifi
 super + n
-	~/.local/bin/rofi-wifi-menu.sh
+	~/.local/bin/scripts/rofi-wifi-menu.sh
 
 # rofi-powermenu
 super + x
-	~/.local/bin/powermenu.sh
+	~/.local/bin/scripts/powermenu.sh
 
 # firefox
 super + w
@@ -32,13 +32,13 @@ super + w
 
 # volume control
 XF86AudioLowerVolume
-	dunstvolume.sh down	
+	pactl set-sink-volume @DEFAULT_SINK@ -5%	
 
 XF86AudioRaiseVolume
-	dunstvolume.sh up
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioMute
-	dunstvolume.sh mute        
+	amixer set Master toggle
 
 # brightness
 XF86MonBrightness{Up,Down}  
