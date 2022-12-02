@@ -19,11 +19,11 @@ super + c
 
 # rofi-wifi
 super + n
-	~/.local/bin/scripts/rofi-wifi-menu.sh
+	/home/narmis/.dotfiles/rofi/scripts/wifi-menu.sh
 
 # rofi-powermenu
 super + x
-	~/.local/bin/scripts/powermenu.sh
+	/home/narmis/.dotfiles/rofi/scripts/power-menu.sh
 
 # firefox
 super + w
