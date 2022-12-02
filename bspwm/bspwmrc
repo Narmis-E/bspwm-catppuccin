@@ -8,7 +8,6 @@ python3 /home/narmis/programs/python/pydexcom/dexcom.py &
 picom --animations &
 nitrogen --set-scaled ~/Pictures/wallpapers/minimalist-planets.jpg
 pgrep -x tint2 > /dev/null || tint2 &
-#xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
 
 # workspaces
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
