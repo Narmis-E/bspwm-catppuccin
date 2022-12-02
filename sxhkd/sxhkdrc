@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+	termite
 
 # fireshot
 super + Print
@@ -43,6 +43,19 @@ XF86AudioMute
 # brightness
 XF86MonBrightness{Up,Down}  
 	brightnessctl s 5%{+,-}  
+
+# media controls
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioStop
+	playerctl stop
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
 
 # thunar
 super + a
@@ -157,3 +170,7 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# scratchpad
+alt + Return
+	./~/.local/bin/scripts/scpad
