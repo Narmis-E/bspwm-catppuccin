@@ -7,8 +7,8 @@ if [[ $playerctlstatus ==  "" ]]; then
     `polybar-msg cmd hide > /dev/null`
 elif [[ $playerctlstatus =~ "Playing" ]]; then
     `polybar-msg cmd show > /dev/null`
-    echo "%{A1:playerctl pause:}  %{A}$title"
+    echo "%{A1:playerctl pause:}   %{A}$title"
 else
     `polybar-msg cmd show > /dev/null`
-    echo "%{A1:playerctl play:}  %{A}$title"
+    echo "%{A1:playerctl play:}   %{A}$title"
 fi
