@@ -1,6 +1,6 @@
 #! /bin/sh
 
-chosen=$(printf "  Power Off\n  Restart\n  Lock\n  Sign Out" | rofi -dmenu -i -theme-str '@import "squared-material-red.rasi"')
+chosen=$(printf "  Power Off\n  Restart\n  Lock\n  Sign Out" | rofi -dmenu -i -theme-str '@import "simple-tokyonight.rasi"')
 
 case "$chosen" in
 	"  Power Off") xfce4-session-logout --halt --fast ;;
