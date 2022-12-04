@@ -14,9 +14,8 @@ super + Print
 super + @space
 	rofi -show drun -show-icons -drun-icon-theme Papirus
 # rofi-calc
-super + c	
-	rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip"
-
+super + b	
+	/home/narmis/.dotfiles/rofi/scripts/bluetooth.sh	
 # rofi-wifi
 super + n
 	/home/narmis/.dotfiles/rofi/scripts/wifi-menu.sh
@@ -29,6 +28,13 @@ super + x
 super + w
 	firefox
 
+#todo
+super + shift + t
+	rofi-todo -f ~/Documents/todo.json
+
+#file browser
+super + shift + a
+	rofi -show file-browser-extended [ -file-browser-dir /home/narmis/ ] [ -file-browser-cmd /bin/termite ]
 
 # volume control
 XF86AudioLowerVolume
@@ -110,8 +116,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
