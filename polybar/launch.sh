@@ -7,6 +7,7 @@ echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
 polybar powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
 polybar timespace 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar playerctl 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar cava 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar dexcom 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
