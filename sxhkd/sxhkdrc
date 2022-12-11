@@ -10,7 +10,10 @@ super + Return
 super + Print
 	flameshot gui
 
-# rofi
+# rofi locate
+super + l
+	xdg-open "$(locate home media | rofi -threads 0 -width 100 -dmenu -i -p "locate:")"
+# rofi locate
 super + @space
 	rofi -show drun -show-icons -drun-icon-theme Papirus
 # rofi-calc
@@ -23,6 +26,10 @@ super + n
 # rofi-powermenu
 super + x
 	/home/narmis/.dotfiles/rofi/scripts/power-menu.sh
+
+# rofi exec
+super + r 
+	bash -c "$(rofi -dmenu -p 'Run command')"
 
 # firefox
 super + w
