@@ -1,7 +1,5 @@
 #! /bin/bash
 
-my_dir=`dirname $0`
-
 yay -S catppuccin-gtk-theme-mocha zscroll-git
 sudo pacman -S bspwm sxhkd polybarlxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2
 
