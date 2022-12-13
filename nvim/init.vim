@@ -36,33 +36,7 @@ nmap <F8> :TagbarToggle<CR>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+inoremap [ []<leftinoremap {;<CR> {<CR>};<ESC>O
 
+nnoremap <F5> :sp<bar>term<cr><c-w>J:resize10<cr>
 colorscheme catppuccin-mocha
-
-let g:dashboard_default_executive ='clap'
-let g:mapleader="\<Space>"
-nmap <Leader>ss :<C-u>SessionSave<CR>
-nmap <Leader>sl :<C-u>SessionLoad<CR>
-nmap <Leader>cn :<C-u>DashboardNewFile<CR>
-nnoremap <silent> <Leader>fh :<C-u>Clap history<CR>
-nnoremap <silent> <Leader>ff :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
-nnoremap <silent> <Leader>tc :<C-u>Clap colors<CR>
-nnoremap <silent> <Leader>fa :<C-u>Clap grep2<CR>
-nnoremap <silent> <Leader>fb :<C-u>Clap marks<CR>
-nnoremap <silent> <Leader>cn :<C-u>DashboardNewFile<CR>
-
-let g:dashboard_custom_shortcut={
-  \ 'last_session'       : 'SPC s l',
-  \ 'find_history'       : 'SPC f h',
-  \ 'find_file'          : 'SPC f f',
-  \ 'new_file'           : 'SPC c n',
-  \ 'change_colorscheme' : 'SPC t c',
-  \ 'find_word'          : 'SPC f a',
-  \ 'book_marks'         : 'SPC f b',
-  \ }
-
-
