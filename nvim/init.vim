@@ -36,7 +36,10 @@ nmap <F8> :TagbarToggle<CR>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
-inoremap [ []<leftinoremap {;<CR> {<CR>};<ESC>O
+inoremap [ []<left>
+inoremap {;<CR> {<CR>};<ESC>O
+cnoremap <A-BS> <c-w>
+inoremap <A-BS> <c-w>
 
 nnoremap <F5> :sp<bar>term<cr><c-w>J:resize10<cr>
 colorscheme catppuccin-mocha
