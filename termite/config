@@ -1,0 +1,77 @@
+[options]
+allow_bold = true
+#audible_bell = false
+#bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+clickable_url = true
+dynamic_title = true
+font =  Iosevka Nerd Font 10
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+browser = xdg-open
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = ibeam
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+# "off", "left" or "right"
+#scrollbar = off
+
+# ====================================
+[colors]
+
+# https=//github.com/chriskempson/base16-xresources/blob/master/base16-default.dark.256.xresources
+# Base16 Default
+# Scheme=Chris Kempson (http=//chriskempson.com)
+
+foreground=#CDD6F4
+background=#1E1E2E
+cursor=#F5E0DC
+
+color0=#45475A
+color1=#F38BA8
+color2=#A6E3A1
+color3=#F9E2AF
+color4=#89B4FA
+color5=#F5C2E7
+color6=#94E2D5
+color7=#BAC2DE
+
+color8=#585B70
+color9=#F38BA8
+color10=#A6E3A1
+color11=#F9E2AF
+color12=#89B4FA
+color13=#F5C2E7
+color14=#94E2D5
+color15=#CDD6F4
+
+color16=#FAB387
+color17=#F5E0DC
+color18=#282828
+color19=#383838
+color20=#b8b8b8
+color21=#e8e8e8
