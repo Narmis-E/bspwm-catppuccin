@@ -2,11 +2,6 @@
 
 ###### Narmis BSPWM Rice Installer ######
 
-if [ "$EUID" -ne 0 ]; then
-	echo "Please run as root (for copying files over to filesystem.)"
-	exit
-fi
-
 read -p "This script is capable of replacing directories and files inside the /home/$USER dir. Proceed? [Y/n]: " accept
 
 if [ "$accept" = "" ]; then
