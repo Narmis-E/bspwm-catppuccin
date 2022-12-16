@@ -107,10 +107,11 @@ if [ "$accept" = "" ]; then
 	###########################################################################################
 
 	echo "Adding Iosevka Nerd Font..." && sleep 1
-	sudo cp ~/.dotfiles/fonts/'Iosevka Term Nerd Font Complete.ttf' /usr/share/fonts
+	sudo cp $HOME/.dotfiles/fonts/'Iosevka Term Nerd Font Complete.ttf' /usr/share/fonts
+	sudo cp $HOME/.dotfiles/fonts/'DejaVuSansMono-wifi-ramp.ttf' /usr/share/fonts
 else
 	echo "Exited."
-	exit
+				exit
 fi
 
 
