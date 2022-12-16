@@ -7,15 +7,16 @@ if [ "$EUID" -ne 0 ]; then
 	exit
 fi
 
-read -p "This script is capable of replacing directories and files inside the /home/$USER dir. Proceed? [y/n]: " accept
+read -p "This script is capable of replacing directories and files inside the /home/$USER dir. Proceed? [Y/n]: " accept
 
-if [ "$accept" = "y" ]; then
+if [ "$accept" = "" ]; then
 	echo "Making directories..." && sleep 1
-	cd $HOME && mkdir .dotfiles && mkdir Downloads/git
-
+	cd $HOME/.dotfiles && mkdir $HOME/Downloads/git && cd $HOME/Downloads/git
+	
 	echo "Installing packages..." && sleep 2
+	pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git 
-	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 nvim thunar
+	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar
 
 	echo "Installing catppuccin papirus-folders..." && sleep 2
 	cd $HOME/Downloads/git/
@@ -24,12 +25,12 @@ if [ "$accept" = "y" ]; then
 	./papirus-folders -C cat-mocha-red --theme Papirus
 
 	echo "Installing and symlinking dots..." && sleep 2
-	chmod 755 bspwm/bspwmrc sxhkd/sxhkdrc polybar/launch.sh polybar/scripts/cava.sh polybar/scripts/dexcom.sh polybar/scripts/playerctl.sh rofi/scripts/bluetooth.sh rofi/scripts/power-menu.sh rofi/scripts/wifi-menu.sh
+	chmod 755 $HOME/.dotfiles/bspwm/bspwmrc $HOME/.dotfiles/sxhkd/sxhkdrc $HOME/.dotfiles/polybar/launch.sh $HOME/.dotfiles/polybar/scripts/cava.sh $HOME/.dotfiles/polybar/scripts/dexcom.sh $HOME/.dotfiles/polybar/scripts/playerctl.sh $HOME/.dotfiles/rofi/scripts/bluetooth.sh $HOME/.dotfiles/rofi/scripts/power-menu.sh $HOME/.dotfiles/rofi/scripts/wifi-menu.sh
 
 	###### BSPWM ################################################################################
 	[ -d "$HOME/.config/bspwm" ] && echo "Directory $HOME/.config/bspwm exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read bspwm_accept
+	if [ "$bspwm_accept" = "" ]; then
 		rm -rf $HOME/.config/bspwm
 		echo "Removed $HOME/.config/bspwm"
 	else
@@ -40,8 +41,8 @@ if [ "$accept" = "y" ]; then
 
 	###### SXHKD ################################################################################
 	[ -d "$HOME/.config/sxhkd" ] && echo "Directory $HOME/.config/sxhkd exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read sxhkd_accept
+	if [ "$sxhkd_accept" = "" ]; then
 		rm -rf $HOME/.config/sxhkd
 		echo "Removed $HOME/.config/sxhkd"
 	else
@@ -52,8 +53,8 @@ if [ "$accept" = "y" ]; then
 
 	###### POLYBAR ##################################################################################
 	[ -d "$HOME/.config/polybar" ] && echo "Directory $HOME/.config/polybar exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read poly_accept
+	if [ "$poly_accept" = "" ]; then
 		rm -rf $HOME/.config/polybar
 		echo "Removed $HOME/.config/polybar"
 	else
@@ -64,8 +65,8 @@ if [ "$accept" = "y" ]; then
 
 	###### TINT2 ################################################################################
 	[ -d "$HOME/.config/tint2" ] && echo "Directory $HOME/.config/tint2 exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read tint_accept
+	if [ "$tint_accept" = "" ]; then
 		rm -rf $HOME/.config/tint2
 		echo "Removed $HOME/.config/tint2"
 	else
@@ -76,8 +77,8 @@ if [ "$accept" = "y" ]; then
 
 	###### NEOFETCH ###################################################################################
 	[ -d "$HOME/.config/neofetch" ] && echo "Directory $HOME/.config/neofetch exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read neo_accept
+	if [ "$neo_accept" = "" ]; then
 		rm -rf $HOME/.config/neofetch
 		echo "Removed $HOME/.config/neofetch"
 	else
@@ -88,8 +89,8 @@ if [ "$accept" = "y" ]; then
 
 	###### NEOVIM #############################################################################
 	[ -d "$HOME/.config/nvim" ] && echo "Directory $HOME/.config/nvim exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read $vim_accept
+	if [ "$vim_accept" = "" ]; then
 		rm -rf $HOME/.config/nvim
 		echo "Removed $HOME/.config/nvim"
 	else
@@ -100,8 +101,8 @@ if [ "$accept" = "y" ]; then
 
 	###### ROFI ###############################################################################
 	[ -d "$HOME/.config/rofi" ] && echo "Directory $HOME/.config/rofi exists, replace? [Y/n]: "
-	read accept
-	if [ accept == "" ]; then
+	read rofi_accept
+	if [ "$rofi_accept" = "" ]; then
 		rm -rf $HOME/.config/rofi
 		echo "Removed $HOME/.config/rofi"
 	else
