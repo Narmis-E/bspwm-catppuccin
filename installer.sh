@@ -8,27 +8,26 @@ if [ "$accept" = "" ]; then
 	echo "Making directories..." && sleep 1
 	cd $HOME/.dotfiles && mkdir $HOME/Downloads/git && cd $HOME/Downloads/git
 	
-	echo "Installing packages..." && sleep 2
+	echo "Installing packages..." && sleep 1
 	sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git 
+	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git xcursor-breeze
 	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar exa
 
-	echo "Installing catppuccin papirus-folders..." && sleep 2
+	echo "Installing catppuccin papirus-folders..." && sleep 1
 	cd $HOME/Downloads/git/
 	git clone https://github.com/catppuccin/papirus-folders.git && cd papirus-folders
 	sudo cp -r src/* /usr/share/icons/Papirus
 	./papirus-folders -C cat-mocha-red --theme Papirus
 
-	echo "Installing vim-plug..." && sleep 2
+	echo "Installing vim-plug..." && sleep 1
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-	echo "Installing and symlinking dots..." && sleep 2
+	echo "Installing and symlinking dots..." && sleep 1
 	chmod 755 $HOME/.dotfiles/bspwm/bspwmrc $HOME/.dotfiles/sxhkd/sxhkdrc $HOME/.dotfiles/polybar/launch.sh $HOME/.dotfiles/polybar/scripts/cava.sh $HOME/.dotfiles/polybar/scripts/dexcom.sh $HOME/.dotfiles/polybar/scripts/playerctl.sh $HOME/.dotfiles/rofi/scripts/bluetooth.sh $HOME/.dotfiles/rofi/scripts/power-menu.sh $HOME/.dotfiles/rofi/scripts/wifi-menu.sh
 
 	###### BSPWM ################################################################################
-	[ -d "$HOME/.config/bspwm" ] && echo "Directory $HOME/.config/bspwm exists, replace? [Y/n]: "
-	read bspwm_accept
+	[ -d "$HOME/.config/bspwm" ] && echo "Directory $HOME/.config/bspwm exists, replace? [Y/n]: " && read bspwm_accept
 	if [ "$bspwm_accept" = "" ]; then
 		rm -rf $HOME/.config/bspwm
 		echo "Removed $HOME/.config/bspwm"
@@ -36,11 +35,9 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/bspwm $HOME/.config/
-	#############################################################################################
 
 	###### SXHKD ################################################################################
-	[ -d "$HOME/.config/sxhkd" ] && echo "Directory $HOME/.config/sxhkd exists, replace? [Y/n]: "
-	read sxhkd_accept
+	[ -d "$HOME/.config/sxhkd" ] && echo "Directory $HOME/.config/sxhkd exists, replace? [Y/n]: " && read sxhkd_accept
 	if [ "$sxhkd_accept" = "" ]; then
 		rm -rf $HOME/.config/sxhkd
 		echo "Removed $HOME/.config/sxhkd"
@@ -48,11 +45,9 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/sxhkd $HOME/.config/
-	#############################################################################################
 
 	###### POLYBAR ##################################################################################
-	[ -d "$HOME/.config/polybar" ] && echo "Directory $HOME/.config/polybar exists, replace? [Y/n]: "
-	read poly_accept
+	[ -d "$HOME/.config/polybar" ] && echo "Directory $HOME/.config/polybar exists, replace? [Y/n]: " && read poly_accept
 	if [ "$poly_accept" = "" ]; then
 		rm -rf $HOME/.config/polybar
 		echo "Removed $HOME/.config/polybar"
@@ -60,11 +55,9 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/polybar $HOME/.config/
-	#################################################################################################
 
 	###### TINT2 ################################################################################
-	[ -d "$HOME/.config/tint2" ] && echo "Directory $HOME/.config/tint2 exists, replace? [Y/n]: "
-	read tint_accept
+	[ -d "$HOME/.config/tint2" ] && echo "Directory $HOME/.config/tint2 exists, replace? [Y/n]: " && read tint_accept
 	if [ "$tint_accept" = "" ]; then
 		rm -rf $HOME/.config/tint2
 		echo "Removed $HOME/.config/tint2"
@@ -72,11 +65,9 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/tint2 $HOME/.config/
-	#############################################################################################
 
 	###### NEOFETCH ###################################################################################
-	[ -d "$HOME/.config/neofetch" ] && echo "Directory $HOME/.config/neofetch exists, replace? [Y/n]: "
-	read neo_accept
+	[ -d "$HOME/.config/neofetch" ] && echo "Directory $HOME/.config/neofetch exists, replace? [Y/n]: " && read neo_accept
 	if [ "$neo_accept" = "" ]; then
 		rm -rf $HOME/.config/neofetch
 		echo "Removed $HOME/.config/neofetch"
@@ -84,11 +75,9 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/neofetch $HOME/.config/
-	###################################################################################################
 
-	###### NEOVIM #############################################################################
-	[ -d "$HOME/.config/nvim" ] && echo "Directory $HOME/.config/nvim exists, replace? [Y/n]: "
-	read $vim_accept
+	###### NEOVIM ################################################################################################
+	[ -d "$HOME/.config/nvim" ] && echo "Directory $HOME/.config/nvim exists, replace? [Y/n]: " && read vim_accept
 	if [ "$vim_accept" = "" ]; then
 		rm -rf $HOME/.config/nvim
 		echo "Removed $HOME/.config/nvim"
@@ -96,11 +85,9 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/nvim $HOME/.config/
-	###########################################################################################
 
-	###### ROFI ###############################################################################
-	[ -d "$HOME/.config/rofi" ] && echo "Directory $HOME/.config/rofi exists, replace? [Y/n]: "
-	read rofi_accept
+	###### ROFI ###################################################################################################
+	[ -d "$HOME/.config/rofi" ] && echo "Directory $HOME/.config/rofi exists, replace? [Y/n]: " && read rofi_accept
 	if [ "$rofi_accept" = "" ]; then
 		rm -rf $HOME/.config/rofi
 		echo "Removed $HOME/.config/rofi"
@@ -108,12 +95,36 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/rofi $HOME/.config/
-	###########################################################################################
-	ln -sf $HOME/.dotfiles/images/wallpapers $HOME/Pictures
+	
+	###### TERMITE #########################################################################################################
+	[ -d "$HOME/.config/termite" ] && echo "Directory $HOME/.config/termite exists, replace? [Y/n]: " && read termite_accept
+	if [ "$termite_accept" = "" ]; then
+		rm -rf $HOME/.config/termite
+		echo "Removed $HOME/.config/termite"
+	else
+		echo "Skipped directory."
+	fi
+	ln -sf $HOME/.dotfiles/termite $HOME/.config/
+	
+	###### PICOM #####################################################################################################
+	[ -d "$HOME/.config/picom" ] && echo "Directory $HOME/.config/picom exists, replace? [Y/n]: " && read picom_accept
+	if [ "$picom_accept" = "" ]; then
+		rm -rf $HOME/.config/picom
+		echo "Removed $HOME/.config/picom"
+	else
+		echo "Skipped directory."
+	fi
+	ln -sf $HOME/.dotfiles/picom $HOME/.config/
+	#################################################################################################################
 
-	echo "Adding Iosevka Nerd Font..." && sleep 1
+	###### WALLPAPERS #####################################
+	ln -sf $HOME/.dotfiles/images/wallpapers $HOME/Pictures
+	#######################################################
+	echo "Adding fonts and applying GTK-3 config..." && sleep 1
 	sudo cp $HOME/.dotfiles/fonts/'Iosevka Term Nerd Font Complete.ttf' /usr/share/fonts
 	sudo cp $HOME/.dotfiles/fonts/'DejaVuSansMono-wifi-ramp.ttf' /usr/share/fonts
+
+	echo "Run ':PlugInstall' inside of nvim to install all of the plugins. Installation complete!"
 else
 	echo "Exited."
 				exit
