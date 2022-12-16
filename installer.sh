@@ -19,6 +19,10 @@ if [ "$accept" = "" ]; then
 	sudo cp -r src/* /usr/share/icons/Papirus
 	./papirus-folders -C cat-mocha-red --theme Papirus
 
+	echo "Installing vim-plug..." && sleep 2
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 	echo "Installing and symlinking dots..." && sleep 2
 	chmod 755 $HOME/.dotfiles/bspwm/bspwmrc $HOME/.dotfiles/sxhkd/sxhkdrc $HOME/.dotfiles/polybar/launch.sh $HOME/.dotfiles/polybar/scripts/cava.sh $HOME/.dotfiles/polybar/scripts/dexcom.sh $HOME/.dotfiles/polybar/scripts/playerctl.sh $HOME/.dotfiles/rofi/scripts/bluetooth.sh $HOME/.dotfiles/rofi/scripts/power-menu.sh $HOME/.dotfiles/rofi/scripts/wifi-menu.sh
 
