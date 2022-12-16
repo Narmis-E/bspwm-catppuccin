@@ -9,7 +9,7 @@ if [ "$accept" = "" ]; then
 	cd $HOME/.dotfiles && mkdir $HOME/Downloads/git && cd $HOME/Downloads/git
 	
 	echo "Installing packages..." && sleep 2
-	pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+	sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git 
 	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar
 
