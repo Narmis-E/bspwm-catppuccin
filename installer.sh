@@ -11,20 +11,19 @@ read -p "This script is capable of replacing directories and files inside the /h
 
 if [ "$accept" = "y" ]; then
 	echo "Making directories..." && sleep 1
-	cd $HOME && mkdir .dotfiles && mkdir $HOME/Downloads/git
+	cd $HOME && mkdir .dotfiles && mkdir Downloads/git
 
 	echo "Installing packages..." && sleep 2
 	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git 
 	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 nvim thunar
 
 	echo "Installing catppuccin papirus-folders..." && sleep 2
-	cd ~/Downloads/git/
+	cd $HOME/Downloads/git/
 	git clone https://github.com/catppuccin/papirus-folders.git && cd papirus-folders
 	sudo cp -r src/* /usr/share/icons/Papirus
 	./papirus-folders -C cat-mocha-red --theme Papirus
 
 	echo "Installing and symlinking dots..." && sleep 2
-	cd ~ && git clone https://github.com/narmis-e/dotfiles && cp dotfiles .dotfiles && rm -rf dotfiles && cd .dotfiles
 	chmod 755 bspwm/bspwmrc sxhkd/sxhkdrc polybar/launch.sh polybar/scripts/cava.sh polybar/scripts/dexcom.sh polybar/scripts/playerctl.sh rofi/scripts/bluetooth.sh rofi/scripts/power-menu.sh rofi/scripts/wifi-menu.sh
 
 	###### BSPWM ################################################################################
