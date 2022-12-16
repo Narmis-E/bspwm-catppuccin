@@ -11,7 +11,7 @@ if [ "$accept" = "" ]; then
 	echo "Installing packages..." && sleep 2
 	sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git 
-	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar
+	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar exa
 
 	echo "Installing catppuccin papirus-folders..." && sleep 2
 	cd $HOME/Downloads/git/
