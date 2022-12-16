@@ -109,6 +109,7 @@ if [ "$accept" = "" ]; then
 	fi
 	ln -sf $HOME/.dotfiles/rofi $HOME/.config/
 	###########################################################################################
+	ln -sf $HOME/.dotfiles/images/wallpapers $HOME/Pictures
 
 	echo "Adding Iosevka Nerd Font..." && sleep 1
 	sudo cp $HOME/.dotfiles/fonts/'Iosevka Term Nerd Font Complete.ttf' /usr/share/fonts
