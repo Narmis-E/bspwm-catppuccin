@@ -106,6 +106,16 @@ if [ "$accept" = "" ]; then
 	fi
 	ln -sf $HOME/.dotfiles/termite $HOME/.config/
 
+	###### DUNST #########################################################################################################
+	[ -d "$HOME/.config/dunst" ] && echo "Directory $HOME/.config/dunst exists, replace? [Y/n]: " && read dunst_accept
+	if [ "$dunst_accept" = "" ]; then
+		rm -rf $HOME/.config/dunst
+		echo "Removed $HOME/.config/dunst"
+	else
+		echo "Skipped directory."
+	fi
+	ln -sf $HOME/.dotfiles/dunst $HOME/.config/
+
 	###### PICOM #####################################################################################################
 	[ -d "$HOME/.config/picom" ] && echo "Directory $HOME/.config/picom exists, replace? [Y/n]: " && read picom_accept
 	if [ "$picom_accept" = "" ]; then
@@ -120,11 +130,13 @@ if [ "$accept" = "" ]; then
 
 	###### WALLPAPERS #####################################
 	ln -sf $HOME/.dotfiles/images/wallpapers $HOME/Pictures
-
 	###### BASHRC #########################################
 	ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/
-	#######################################################
-
+	###### GTK-3.0 ######################################
+	ln -sf $HOME/.dotfiles/gtk-3.0/gtk.css $HOME/.config/
+	ln -sf $HOME/.dotfiles/gtk-3.0/settings.ini $HOME/.config
+	#########################################################
+	
 	echo "Adding fonts and applying GTK-3 config..." && sleep 1
 	sudo cp $HOME/.dotfiles/fonts/'Iosevka Term Nerd Font Complete.ttf' /usr/share/fonts
 	sudo cp $HOME/.dotfiles/fonts/'DejaVuSansMono-wifi-ramp.ttf' /usr/share/fonts
