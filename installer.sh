@@ -10,8 +10,8 @@ if [ "$accept" = "" ]; then
 	
 	echo "Installing packages..." && sleep 1
 	sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git xcursor-breeze
-	sudo pacman -S bspwm sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar exa
+	yay -S catppuccin-gtk-theme-mocha zscroll-git picom-pijulius-git xcursor-breeze bspwm-rounded-corners-git
+	sudo pacman -S sxhkd polybar lxappearance-gtk3 lxsession brightnessctl papirus-icon-theme playerctl rofi nitrogen tint2 neovim thunar exa dunst
 
 	echo "Installing catppuccin papirus-folders..." && sleep 1
 	cd $HOME/Downloads/git/
@@ -24,7 +24,7 @@ if [ "$accept" = "" ]; then
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 	echo "Installing and symlinking dots..." && sleep 1
-	chmod 755 $HOME/.dotfiles/bspwm/bspwmrc $HOME/.dotfiles/sxhkd/sxhkdrc $HOME/.dotfiles/polybar/launch.sh $HOME/.dotfiles/polybar/scripts/cava.sh $HOME/.dotfiles/polybar/scripts/dexcom.sh $HOME/.dotfiles/polybar/scripts/playerctl.sh $HOME/.dotfiles/rofi/scripts/bluetooth.sh $HOME/.dotfiles/rofi/scripts/power-menu.sh $HOME/.dotfiles/rofi/scripts/wifi-menu.sh
+	chmod 755 $HOME/.dotfiles/bspwm/bspwmrc $HOME/.dotfiles/sxhkd/sxhkdrc $HOME/.dotfiles/polybar/launch.sh $HOME/.dotfiles/polybar/scripts/cava.sh $HOME/.dotfiles/polybar/scripts/dexcom.sh $HOME/.dotfiles/polybar/scripts/playerctl.sh $HOME/.dotfiles/rofi/scripts/bluetooth.sh $HOME/.dotfiles/rofi/scripts/power-menu.sh $HOME/.dotfiles/rofi/scripts/wifi-menu.sh && echo ""
 
 	###### BSPWM ################################################################################
 	[ -d "$HOME/.config/bspwm" ] && echo "Directory $HOME/.config/bspwm exists, replace? [Y/n]: " && read bspwm_accept
@@ -105,7 +105,7 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/termite $HOME/.config/
-	
+
 	###### PICOM #####################################################################################################
 	[ -d "$HOME/.config/picom" ] && echo "Directory $HOME/.config/picom exists, replace? [Y/n]: " && read picom_accept
 	if [ "$picom_accept" = "" ]; then
@@ -115,19 +115,24 @@ if [ "$accept" = "" ]; then
 		echo "Skipped directory."
 	fi
 	ln -sf $HOME/.dotfiles/picom $HOME/.config/
-	#################################################################################################################
+
+	###########################################
 
 	###### WALLPAPERS #####################################
 	ln -sf $HOME/.dotfiles/images/wallpapers $HOME/Pictures
+
+	###### BASHRC #########################################
+	ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/
 	#######################################################
+
 	echo "Adding fonts and applying GTK-3 config..." && sleep 1
 	sudo cp $HOME/.dotfiles/fonts/'Iosevka Term Nerd Font Complete.ttf' /usr/share/fonts
 	sudo cp $HOME/.dotfiles/fonts/'DejaVuSansMono-wifi-ramp.ttf' /usr/share/fonts
 
 	echo "Run ':PlugInstall' inside of nvim to install all of the plugins. Installation complete!"
+
+	###### END OF INSTALLER ######################################################################
 else
 	echo "Exited."
 				exit
 fi
-
-
