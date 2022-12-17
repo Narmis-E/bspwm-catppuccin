@@ -133,8 +133,7 @@ if [ "$accept" = "" ]; then
 	###### BASHRC #########################################
 	ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/
 	###### GTK-3.0 ######################################
-	ln -sf $HOME/.dotfiles/gtk-3.0/gtk.css $HOME/.config/
-	ln -sf $HOME/.dotfiles/gtk-3.0/settings.ini $HOME/.config
+	ln -sf $HOME/.dotfiles/gtk-3.0/ $HOME/.config/
 	#########################################################
 	
 	echo "Adding fonts and applying GTK-3 config..." && sleep 1
