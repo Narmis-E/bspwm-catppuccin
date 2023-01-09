@@ -2,7 +2,7 @@
 
 My linux configs for bspwm, sxhkd, tint2, polybar, picom, rofi and dunst.
 
-![](images/rice-completed.png)
+![](images/rice-complete.png)
 
 ### Info:
 📥 = my configs/scripts
@@ -25,4 +25,4 @@ My linux configs for bspwm, sxhkd, tint2, polybar, picom, rofi and dunst.
 [xev](https://github.com/freedesktop/xev): useful for finding the name of certain keystrokes\
 [ImageGoNord](https://github.com/Schrodinger-Hat/ImageGoNord): nordifies any image (see some -nord versions in [wallpapers](https://github.com/Narmis-E/linux-config/tree/main/images/wallpapers))!
 
-# This rice is now complete, and I am working on a [pywal version](https://github.com/Narmis-E/bspwm-pywal) because pywal is cool.
+### This rice is now complete, and I am working on a [pywal version](https://github.com/Narmis-E/bspwm-pywal) because pywal is cool.
